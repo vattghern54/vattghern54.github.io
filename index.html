@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Максим Пирогов | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #ff5500;
+            --bg-dark: #050505;
+            --console-green: rgba(34, 197, 94, 0.3);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: #eeeeee;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .accent-text { color: var(--accent); }
+        
+        .section-divider {
+            height: 1px;
+            background: repeating-linear-gradient(90deg, var(--console-green), var(--console-green) 10px, transparent 10px, transparent 20px);
+            margin: 0 10%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1.2s ease-in-out;
+        }
+
+        .bg-1 { background-image: linear-gradient(rgba(5,5,5,0.85), rgba(5,5,5,0.95)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2000'); }
+        .bg-2 { background-image: linear-gradient(rgba(5,5,5,0.8), rgba(5,5,5,0.9)), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000'); }
+        .bg-3 { background-image: linear-gradient(rgba(5,5,5,0.9), rgba(5,5,5,1)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000'); }
+
+        .skill-tag {
+            background: rgba(255, 85, 0, 0.08);
+            border: 1px solid rgba(255, 85, 0, 0.4);
+            padding: 14px 28px;
+            border-radius: 2px;
+            font-size: 1.4rem;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        .skill-tag:hover {
+            background: var(--accent);
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        .glass {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 12px solid var(--accent);
+        }
+
+        .footer-img {
+            height: 60px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 15px;
+            filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.5));
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bg-overlay" class="bg-1"></div>
+
+    <nav class="fixed top-0 w-full z-50 glass !border-l-0 px-10 py-8 flex justify-end items-center bg-black/80">
+        <div class="space-x-12 text-sm uppercase tracking-[0.3em] font-bold">
+            <a href="#about" class="hover:text-orange-500 transition">Обо мне</a>
+            <a href="#education" class="hover:text-orange-500 transition">Образование</a>
+            <a href="#experience" class="hover:text-orange-500 transition">Стек и Опыт</a>
+            <a href="#contacts" class="text-orange-500">Связь</a>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-48 pb-16 px-10 md:px-40 flex flex-col justify-center" data-bg="bg-1">
+        <div class="reveal">
+            <p class="mono accent-text text-2xl mb-6">root@system: ~</p>
+            <h1 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter uppercase leading-tight">Пирогов<br>Максим</h1>
+            <h2 class="text-3xl md:text-4xl text-gray-400 max-w-4xl leading-tight font-light">
+                SOC L1 Analyst / Junior Pentest Specialist. <br>
+                <span class="text-white font-medium">Москва, Басманный район.</span>
+            </h2>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="education" class="pt-16 pb-32 px-10 md:px-40 flex flex-col justify-center" data-bg="bg-2">
+        <div class="reveal max-w-6xl">
+            <h3 class="text-6xl font-bold mb-20 tracking-tight uppercase">Образование</h3>
+            
+            <div class="space-y-16">
+                <div class="glass p-12">
+                    <h4 class="text-4xl font-bold mb-4">МГТУ им. Н.Э. Баумана</h4>
+                    <p class="text-orange-500 font-mono text-2xl mb-8">2023 — 2028</p>
+                    <p class="text-2xl text-gray-300 leading-relaxed font-medium">
+                        Кафедра «Безопасность в цифровом мире». <br>
+                        Специальность: компьютерно-техническая экспертиза / Форензика
+                    </p>
+                </div>
+
+                <div class="glass p-12">
+                    <h4 class="text-4xl font-bold mb-4 uppercase tracking-wider">Цифровая кафедра МГТУ</h4>
+                    <p class="text-orange-500 font-mono text-2xl mb-8">2025 — 2026</p>
+                    <p class="text-2xl text-gray-200 leading-relaxed">
+                        <span class="font-bold text-white">Специалист по тестированию на проникновение.</span> <br>
+                        Методологии PTES, аудит инфраструктуры AD, работа с Kali Linux, анализ трафика и веб-безопасность (OWASP Top 10).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="experience" class="min-h-screen px-10 md:px-40 py-32" data-bg="bg-3">
+        <div class="reveal">
+            
+            <h3 class="text-6xl font-bold mb-24 tracking-tight uppercase">Опыт и Стек</h3>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+                <div>
+                    <h4 class="text-3xl font-bold mb-12 accent-text mono uppercase tracking-widest">> /experience</h4>
+                    <div class="space-y-12">
+                        <div class="border-b-2 border-gray-900 pb-10">
+                            <h5 class="text-3xl font-bold mb-4">Security Labs & CTF</h5>
+                            <p class="text-gray-400 text-2xl leading-relaxed">Portswigger Academy, TryHackMe. Участие в Alfa-Bank CTF и университетских ИБ-активностях.</p>
+                        </div>
+                        <div class="border-b-2 border-gray-900 pb-10">
+                            <h5 class="text-3xl font-bold mb-4">Инфраструктура</h5>
+                            <p class="text-gray-400 text-2xl leading-relaxed">Администрирование VPS, настройка VPN-сервисов, развертывание и конфигурирование Wazuh (SIEM).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-24">
+                    <div>
+                        <p class="text-3xl text-white uppercase tracking-[0.3em] mb-10 font-black border-l-8 border-orange-500 pl-6">Инструментарий</p>
+                        <div class="flex flex-wrap gap-6 mb-16">
+                            <span class="skill-tag">Wazuh</span> <span class="skill-tag">Elastic</span> 
+                            <span class="skill-tag">Burp Suite</span> <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">Nmap</span> <span class="skill-tag">Gobuster</span> 
+                            <span class="skill-tag">FFUF</span> <span class="skill-tag">Subfinder</span>
+                            <span class="skill-tag">Autopsy</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="text-3xl text-white uppercase tracking-[0.3em] mb-10 font-black border-l-8 border-orange-500 pl-6">Сети и Методики</p>
+                        <div class="flex flex-wrap gap-6">
+                            <span class="skill-tag">OSI / TCP/IP</span> <span class="skill-tag">DNS</span> 
+                            <span class="skill-tag">HTTP / HTTPS</span> <span class="skill-tag">MITRE ATT&CK</span> 
+                            <span class="skill-tag">Cyber Kill Chain</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="text-3xl text-white uppercase tracking-[0.3em] mb-10 font-black border-l-8 border-orange-500 pl-6">Dev & OS</p>
+                        <div class="flex flex-wrap gap-6">
+                            <span class="skill-tag">Python (Automation)</span> <span class="skill-tag">Bash</span> 
+                            <span class="skill-tag">SQL</span> <span class="skill-tag">Linux / Windows Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <footer id="contacts" class="pt-40 pb-20 px-10 text-center bg-black">
+        <div class="reveal">
+            <h3 class="text-6xl font-bold mb-16 uppercase tracking-tight">Контакты</h3>
+            <div class="flex flex-col gap-10 text-4xl font-bold mb-32">
+                <a href="tel:+79015725316" class="hover:text-orange-500 transition">+7 (901) 572-53-16</a>
+                <a href="https://t.me/whentheycomeforu" target="_blank" class="hover:text-orange-500 transition">TG: @whentheycomeforu</a>
+            </div>
+            
+            <div class="mt-20 pt-10 border-t border-gray-900 mono text-2xl md:text-3xl text-gray-500 tracking-widest flex items-center justify-center">
+                <span>rm -rf /*</span>
+                <img src="smile.png" alt="smug" class="footer-img">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    const bgClass = entry.target.closest('section')?.dataset.bg;
+                    if (bgClass) {
+                        const overlay = document.getElementById('bg-overlay');
+                        overlay.className = ''; 
+                        overlay.classList.add(bgClass);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
