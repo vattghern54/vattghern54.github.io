@@ -6,8 +6,6 @@
     <title>Максим Пирогов | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <!-- Иконка через эмодзи -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <style>
         :root {
             --accent: #ff5500;
@@ -18,7 +16,7 @@
             background-color: var(--bg-dark);
             color: #eeeeee;
             font-family: 'Inter', sans-serif;
-            font-size: 1.1rem; /* Чуть меньше для мобилок */
+            font-size: 1.1rem; /* Базовый чуть меньше для мобил */
             line-height: 1.6;
             scroll-behavior: smooth;
         }
@@ -66,9 +64,9 @@
         .skill-tag {
             background: rgba(255, 85, 0, 0.08);
             border: 1px solid rgba(255, 85, 0, 0.4);
-            padding: 8px 16px;
+            padding: 10px 18px; /* Уменьшил для мобил */
             border-radius: 2px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.2s;
             font-weight: 600;
         }
@@ -107,19 +105,21 @@
 
     <div id="bg-overlay" class="bg-1"></div>
 
+    <!-- Адаптивный NAV -->
     <nav class="fixed top-0 w-full z-50 glass !border-l-0 px-4 py-4 md:px-10 md:py-8 flex justify-center md:justify-end items-center bg-black/90">
         <div class="flex flex-wrap justify-center gap-4 md:gap-12 text-[10px] md:text-sm uppercase tracking-[0.2em] font-bold">
             <a href="#about" class="hover:text-orange-500 transition">Обо мне</a>
-            <a href="#education" class="hover:text-orange-500 transition">Учеба</a>
-            <a href="#experience" class="hover:text-orange-500 transition">Опыт</a>
+            <a href="#education" class="hover:text-orange-500 transition">Образование</a>
+            <a href="#experience" class="hover:text-orange-500 transition">Стек и Опыт</a>
             <a href="#contacts" class="text-orange-500">Связь</a>
         </div>
     </nav>
 
-    <section id="about" class="min-h-screen pt-32 pb-16 px-6 md:px-40 flex flex-col justify-center" data-bg="bg-1">
+    <!-- SECTION ABOUT -->
+    <section id="about" class="pt-32 pb-16 px-6 md:px-40 flex flex-col justify-center min-h-[80vh]" data-bg="bg-1">
         <div class="reveal">
-            <p class="mono accent-text text-lg md:text-2xl mb-4 md:text-6xl">root@system: ~</p>
-            <h1 class="text-4xl md:text-7xl font-black mb-6 md:mb-10 tracking-tighter uppercase leading-tight">Пирогов<br>Максим</h1>
+            <p class="mono accent-text text-xl md:text-2xl mb-6">root@system: ~</p>
+            <h1 class="text-4xl md:text-7xl font-black mb-8 md:mb-10 tracking-tighter uppercase leading-tight">Пирогов<br>Максим</h1>
             <h2 class="text-xl md:text-4xl text-gray-400 max-w-4xl leading-tight font-light">
                 SOC L1 Analyst / Junior Pentest Specialist. <br>
                 <span class="text-white font-medium">Москва, Басманный район.</span>
@@ -129,26 +129,27 @@
 
     <div class="section-divider"></div>
 
-    <section id="education" class="pt-20 pb-20 px-6 md:px-40 flex flex-col justify-center" data-bg="bg-2">
+    <!-- SECTION EDUCATION -->
+    <section id="education" class="pt-16 pb-24 px-6 md:px-40 flex flex-col justify-center" data-bg="bg-2">
         <div class="reveal max-w-6xl">
-            <h3 class="text-4xl md:text-6xl font-bold mb-10 md:text-20 tracking-tight uppercase">Образование</h3>
+            <h3 class="text-4xl md:text-6xl font-bold mb-12 md:mb-20 tracking-tight uppercase">Образование</h3>
             
-            <div class="space-y-8 md:text-16">
+            <div class="space-y-10 md:space-y-16">
                 <div class="glass p-6 md:p-12">
-                    <h4 class="text-2xl md:text-4xl font-bold mb-2">МГТУ им. Н.Э. Баумана</h4>
-                    <p class="text-orange-500 font-mono text-lg md:text-2xl mb-4">2023 — 2028</p>
+                    <h4 class="text-2xl md:text-4xl font-bold mb-4">МГТУ им. Н.Э. Баумана</h4>
+                    <p class="text-orange-500 font-mono text-lg md:text-2xl mb-6 md:mb-8">2023 — 2028</p>
                     <p class="text-lg md:text-2xl text-gray-300 leading-relaxed font-medium">
-                        Кафедра «Безопасность в цифровом мире». <br class="hidden md:block">
-                        Специальность: Форензика
+                        Кафедра «Безопасность в цифровом мире». <br>
+                        Специальность: компьютерно-техническая экспертиза / Форензика
                     </p>
                 </div>
 
                 <div class="glass p-6 md:p-12">
-                    <h4 class="text-2xl md:text-4xl font-bold mb-2 uppercase tracking-wider">Цифровая кафедра</h4>
-                    <p class="text-orange-500 font-mono text-lg md:text-2xl mb-4">2025 — 2026</p>
+                    <h4 class="text-2xl md:text-4xl font-bold mb-4 uppercase tracking-wider">Цифровая кафедра МГТУ</h4>
+                    <p class="text-orange-500 font-mono text-lg md:text-2xl mb-6 md:mb-8">2025 — 2026</p>
                     <p class="text-lg md:text-2xl text-gray-200 leading-relaxed">
-                        <span class="font-bold text-white">Pentest Specialist.</span> <br>
-                        Kali Linux, AD Audit, OWASP Top 10.
+                        <span class="font-bold text-white">Специалист по тестированию на проникновение.</span> <br>
+                        Методологии PTES, аудит инфраструктуры AD, работа с Kali Linux, анализ трафика и веб-безопасность (OWASP Top 10).
                     </p>
                 </div>
             </div>
@@ -157,40 +158,52 @@
 
     <div class="section-divider"></div>
 
-    <section id="experience" class="min-h-screen px-6 md:px-40 py-20" data-bg="bg-3">
+    <!-- SECTION EXPERIENCE -->
+    <section id="experience" class="min-h-screen px-6 md:px-40 py-20 md:py-32" data-bg="bg-3">
         <div class="reveal">
-            <h3 class="text-4xl md:text-6xl font-bold mb-12 md:text-24 tracking-tight uppercase">Опыт и Стек</h3>
+            <h3 class="text-4xl md:text-6xl font-bold mb-16 md:mb-24 tracking-tight uppercase">Опыт и Стек</h3>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
                 <div>
-                    <h4 class="text-xl md:text-3xl font-bold mb-6 accent-text mono uppercase tracking-widest">> /experience</h4>
-                    <div class="space-y-8">
-                        <div class="border-b border-gray-900 pb-6">
-                            <h5 class="text-xl md:text-3xl font-bold mb-2">Security Labs & CTF</h5>
-                            <p class="text-gray-400 text-lg md:text-2xl leading-relaxed">Portswigger, TryHackMe, Alfa CTF.</p>
+                    <h4 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 accent-text mono uppercase tracking-widest">> /experience</h4>
+                    <div class="space-y-8 md:space-y-12">
+                        <div class="border-b-2 border-gray-900 pb-8 md:pb-10">
+                            <h5 class="text-xl md:text-3xl font-bold mb-4">Security Labs & CTF</h5>
+                            <p class="text-gray-400 text-lg md:text-2xl leading-relaxed">Portswigger Academy, TryHackMe. Участие в Alfa-Bank CTF и университетских ИБ-активностях.</p>
                         </div>
-                        <div class="border-b border-gray-900 pb-6">
-                            <h5 class="text-xl md:text-3xl font-bold mb-2">Инфраструктура</h5>
-                            <p class="text-gray-400 text-lg md:text-2xl leading-relaxed">VPS, VPN, Wazuh (SIEM).</p>
+                        <div class="border-b-2 border-gray-900 pb-8 md:pb-10">
+                            <h5 class="text-xl md:text-3xl font-bold mb-4">Инфраструктура</h5>
+                            <p class="text-gray-400 text-lg md:text-2xl leading-relaxed">Администрирование VPS, настройка VPN-сервисов, развертывание и конфигурирование Wazuh (SIEM).</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="space-y-12 md:space-y-24">
                     <div>
-                        <p class="text-xl md:text-3xl text-white uppercase tracking-[0.2em] mb-6 font-black border-l-4 md:border-l-8 border-orange-500 pl-4 md:text-6">Инструментарий</p>
-                        <div class="flex flex-wrap gap-3 md:gap-6">
-                            <span class="skill-tag">Wazuh</span> <span class="skill-tag">Burp Suite</span> 
-                            <span class="skill-tag">Wireshark</span> <span class="skill-tag">Nmap</span> 
-                            <span class="skill-tag">FFUF</span> <span class="skill-tag">Autopsy</span>
+                        <p class="text-xl md:text-3xl text-white uppercase tracking-[0.2em] mb-6 md:mb-10 font-black border-l-4 md:border-l-8 border-orange-500 pl-4 md:pl-6">Инструментарий</p>
+                        <div class="flex flex-wrap gap-3 md:gap-6 mb-8 md:mb-16">
+                            <span class="skill-tag">Wazuh</span> <span class="skill-tag">Elastic</span> 
+                            <span class="skill-tag">Burp Suite</span> <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">Nmap</span> <span class="skill-tag">Gobuster</span> 
+                            <span class="skill-tag">FFUF</span> <span class="skill-tag">Subfinder</span>
+                            <span class="skill-tag">Autopsy</span>
                         </div>
                     </div>
                     
                     <div>
-                        <p class="text-xl md:text-3xl text-white uppercase tracking-[0.2em] mb-6 font-black border-l-4 md:border-l-8 border-orange-500 pl-4">Dev & OS</p>
+                        <p class="text-xl md:text-3xl text-white uppercase tracking-[0.2em] mb-6 md:mb-10 font-black border-l-4 md:border-l-8 border-orange-500 pl-4 md:pl-6">Сети и Методики</p>
                         <div class="flex flex-wrap gap-3 md:gap-6">
-                            <span class="skill-tag">Python</span> <span class="skill-tag">Bash</span> 
-                            <span class="skill-tag">SQL</span> <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">OSI / TCP/IP</span> <span class="skill-tag">DNS</span> 
+                            <span class="skill-tag">HTTP / HTTPS</span> <span class="skill-tag">MITRE ATT&CK</span> 
+                            <span class="skill-tag">Cyber Kill Chain</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <p class="text-xl md:text-3xl text-white uppercase tracking-[0.2em] mb-6 md:mb-10 font-black border-l-4 md:border-l-8 border-orange-500 pl-4 md:pl-6">Dev & OS</p>
+                        <div class="flex flex-wrap gap-3 md:gap-6">
+                            <span class="skill-tag">Python (Automation)</span> <span class="skill-tag">Bash</span> 
+                            <span class="skill-tag">SQL</span> <span class="skill-tag">Linux / Windows Admin</span>
                         </div>
                     </div>
                 </div>
@@ -200,10 +213,11 @@
 
     <div class="section-divider"></div>
 
-    <footer id="contacts" class="pt-20 pb-16 px-6 text-center bg-black">
+    <!-- FOOTER -->
+    <footer id="contacts" class="pt-20 pb-16 md:pt-40 md:pb-20 px-6 text-center bg-black">
         <div class="reveal">
-            <h3 class="text-4xl md:text-6xl font-bold mb-10 uppercase tracking-tight">Контакты</h3>
-            <div class="flex flex-col gap-6 text-2xl md:text-4xl font-bold mb-20">
+            <h3 class="text-4xl md:text-6xl font-bold mb-12 md:mb-16 uppercase tracking-tight">Контакты</h3>
+            <div class="flex flex-col gap-6 md:gap-10 text-2xl md:text-4xl font-bold mb-20 md:mb-32">
                 <a href="tel:+79015725316" class="hover:text-orange-500 transition">+7 (901) 572-53-16</a>
                 <a href="https://t.me/whentheycomeforu" target="_blank" class="hover:text-orange-500 transition">TG: @whentheycomeforu</a>
             </div>
